@@ -1,0 +1,74 @@
+.verify{
+  height: calc(100vh - 73px);
+}
+.opt-card{
+  min-width: 300px;
+  max-width: 600px;
+  text-align: center;
+  background-color: black;
+  color: #fff;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px  40px -20px #fff;
+}
+
+.opt-card-inputs {
+  margin: 30px 0;
+  display: grid;
+  gap: 30px;
+  justify-content: center;
+  grid-template-columns: repeat(5, auto);
+}
+
+.opt-card-inputs input{
+  width: 40px;
+  height: 50px;
+  font-size: 25px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.opt-card-inputs input:focus{
+  outline: 2px solid var(--main-color);
+  border-color: transparent;
+}
+
+.opt-card button {
+  background-color: var(--main-color);
+  border:none;
+  padding: 0 50px;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top:15px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.opt-card button:hover{
+  opacity: 0.9;
+}
+
+.opt-card button[disabled]{
+  opacity: 0.6;
+  cursor: default;
+}
+
+
+@media (max-width: 400px){
+  .opt-card-inputs{
+    gap: 15px;
+  }
+}

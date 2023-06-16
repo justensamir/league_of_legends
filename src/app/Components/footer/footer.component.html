@@ -1,1 +1,7 @@
-<p>footer works!</p>
+<form [formGroup]="phoneForm">
+  <input type="tel" class="form-control intl-tel-input" formControlName="phone" />
+  <div *ngIf="phoneForm.controls.phone.invalid && phoneForm.controls.phone.touched">
+    <div *ngIf="phoneForm.controls.phone.hasError('required')">Phone number is required.</div>
+    <div *ngIf="phoneForm.controls.phone.hasError('pattern')">Invalid phone number.</div>
+  </div>
+</form>

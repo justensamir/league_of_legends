@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+  --main-color: #A00F0D;
+  --secondary-color: #282d68;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(180deg,black, #641513);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.bg{
+  background-image: linear-gradient(0deg,black, #641513);
+}
+
+.bttn{
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin: 20px 0 0;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  background-color: #A00F0D;
+  border-radius:8px;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  -ms-border-radius:8px;
+  -o-border-radius:8px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-border-radius: 8;
+}
+
+.bttn:hover{
+  opacity: 0.9;
+}

@@ -1,34 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../Services/authentication.service';
-import {
-  AbstractControl,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import * as intlTelInput from 'intl-tel-input';
 import { CookieService } from 'ngx-cookie-service';
-// import {Ng2TelInputModule} from 'ng2-tel-input';
+import { Router } from '@angular/router';
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit{
+  isExist: boolean = false
+  IsDisable: boolean = false
   emailRegex: any = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   passwordRegex: any =
     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[!@#$%^&*()_+~`|}{[\]:;?/<>,.]).{8,}$/;
-  // userLogin: {userName:string,password:string} = {userName:'',password:''}
-  loginForm = new FormGroup({
-    userName: new FormControl('', [
-      Validators.required,
-      Validators.pattern(this.emailRegex),
-    ]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.pattern(this.passwordRegex),
-    ]),
-  });
 
   registerForm = new FormGroup(
     {
@@ -57,7 +44,7 @@ export class LoginComponent implements OnInit {
     this.passwordMatchValidator
   );
 
-  constructor(private auth: AuthenticationService, private cookieService:CookieService) {}
+  constructor(private auth: AuthenticationService, private cookieService:CookieService,private router:Router) {}
   ngOnInit(): void {
     const inputElement = document.getElementById('phone')
     if(inputElement){
@@ -80,28 +67,6 @@ export class LoginComponent implements OnInit {
     }
 
     return null;
-  }
-
-  // Login
-  get getLogEmail() {
-    return this.loginForm.controls.userName;
-  }
-
-  get getLogPassword() {
-    return this.loginForm.controls.password;
-  }
-
-  login() {
-    this.auth.login(this.loginForm.value).subscribe({
-      next: (response: any) => {
-        this.cookieService.set("Cookies",response.token, new Date(response.expiration))
-        // Navigate to home
-        console.log(this.cookieService.get("Cookies"))
-      },
-      error: (err: any) => {
-        console.error(err)
-      }
-    })
   }
 
   // Register
@@ -136,12 +101,19 @@ export class LoginComponent implements OnInit {
       // this.registerForm.controls.phoneNumber =`+${dialCode}${this.registerForm.controls.phoneNumber}`
 
       console.log(dialCode)
+      this.IsDisable = true
       this.auth.register(this.registerForm.value).subscribe({
         next: (response: any) => {
-          console.log(response)
+          this.IsDisable = false
+          this.isExist = false
+          this.cookieService.set("email",String(this.getRegEmail))
+          this.cookieService.set("token",response.token)
+          this.router.navigate(['/verify'])
         },
         error: (err: any) => {
           console.log(err.message)
+          this.IsDisable = false
+          this.isExist = true
         }
       })
     }

@@ -1,1 +1,29 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg bg-dark position-sticky p-0" data-bs-theme="dark">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="assets/images/logo80x80.png" loading="lazy"/></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item me-3">
+          <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/']"
+          [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}"><i class="bi bi-house-door-fill"></i> Home</a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link" href="#"><i class="bi bi-controller" [routerLink]="['/games']" [routerLinkActive]="'active'"
+            [routerLinkActiveOptions]="{exact: true}"></i> Games</a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link " href="#about"  [routerLinkActive]="'active'"
+          [routerLinkActiveOptions]="{exact: true}"><i class="bi bi-person-vcard-fill"></i> About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact" [routerLinkActive]="'active'"
+          [routerLinkActiveOptions]="{exact: true}"><i class="bi bi-people-fill"></i> Contact us</a>
+        </li>
+      </ul>
+      <a href="#" class="btn" [routerLink]="['/signin']">Join us</a>
+    </div>
+  </div>
+</nav>

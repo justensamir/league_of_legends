@@ -1,0 +1,105 @@
+<div class="bg container-fluid ">
+  <div class="container d-flex justify-content-center align-items-center flex-column mx-auto">
+    <div class="login">
+      <div class="pic">
+        <img src="../../../assets/images/Prestige Inkshadow Yasuo.jpeg" loading="lazy" />
+      </div>
+      <form (ngSubmit)="register()" [formGroup]="registerForm" class="form p-3 bg-dark">
+        <div class="mt-3 mb-4">
+          <img class="form-text" src="../../../assets/images/signup1.png" alt="" loading="lazy">
+        </div>
+        <section class="row">
+          <div class="input-icon col-sm-12 col-md-6">
+            <input type="text" formControlName="firstName" class="input-field" placeholder="First Name"
+              autocomplete="off">
+            <ng-container *ngIf="getRegFirstName.touched">
+              <div *ngIf="getRegFirstName.hasError('required')" class="text-danger text-start ps-5">
+                required
+              </div>
+              <div *ngIf="getRegFirstName.hasError('min')" class="text-danger text-start ps-5">
+                minimum length 3 chars
+              </div>
+              <div *ngIf="getRegFirstName.hasError('max')" class="text-danger text-start ps-5">
+                maximum length 15 chars
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="input-icon col-sm-12 col-md-6">
+            <input type="text" formControlName="lastName" class="input-field" placeholder="Last Name"
+              autocomplete="off">
+            <ng-container *ngIf="getRegLastName.touched">
+              <div *ngIf="getRegLastName.hasError('required')" class="text-danger text-start ps-5">
+                required
+              </div>
+              <div *ngIf="getRegLastName.hasError('min')" class="text-danger text-start ps-5">
+                minimum length 3 chars
+              </div>
+              <div *ngIf="getRegLastName.hasError('max')" class="text-danger text-start ps-5">
+                maximum length 15 chars
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="input-icon col-12">
+            <input type="email" formControlName="email" class="input-field" placeholder="user@example.com"
+              autocomplete="off">
+            <ng-container *ngIf="getRegEmail.touched">
+              <div *ngIf="getRegEmail.hasError('required')" class="text-danger text-start ps-5">
+                required
+              </div>
+              <div *ngIf="getRegEmail.hasError('pattern')" class="text-danger text-start ps-5">
+                Invalid Email
+              </div>
+              <div *ngIf="isExist" class="text-danger text-start ps-5">
+                Email Already Exists
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="input-icon col-12">
+            <input type="password" formControlName="password" class="input-field" placeholder="Password"
+              autocomplete="off">
+            <ng-container *ngIf="getRegPassword.touched">
+
+              <div *ngIf="getRegPassword.hasError('required')" class="text-danger text-start ps-5">
+                required
+              </div>
+              <div *ngIf="getRegPassword.hasError('pattern')" class="text-danger text-start ps-5">
+                Invalid Password
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="input-icon col-12">
+            <input type="password" formControlName="confirmPassword" class="input-field" placeholder="Confirm Password"
+              autocomplete="off">
+            <ng-container *ngIf="getRegConfirmPassword.touched">
+
+              <div *ngIf="getRegConfirmPassword.hasError('required')" class="text-danger text-start ps-5">
+                required
+              </div>
+              <div *ngIf="registerForm.hasError('passwordMismatch')" class="text-danger text-start ps-5">
+                Passwords don't match
+              </div>
+            </ng-container>
+          </div>
+          <div class="input-icon col-12" id="phone_">
+            <input type="tel" formControlName="phoneNumber" id="phone" (change)="phoneChange()"
+              class="input-field intl-tel-input" autocomplete="off">
+            <ng-container *ngIf="getRegPhoneNumber.touched">
+              <div *ngIf="getRegPhoneNumber.hasError('required')" class="text-danger text-start ps-5">
+              </div>
+              <div *ngIf="getRegPhoneNumber.hasError('pattern')" class="text-danger text-start ps-5">
+              </div>
+            </ng-container>
+          </div>
+          <button type="submit" class="bttn signin mx-auto" [disabled]="IsDisable">
+            <span *ngIf="IsDisable" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            SIGN UP</button>
+          <p class="text-light my-3">Already have an account <a class="signup-link" [routerLink]="['/signin']">Sign In</a></p>
+        </section>
+      </form>
+    </div>
+  </div>
+</div>

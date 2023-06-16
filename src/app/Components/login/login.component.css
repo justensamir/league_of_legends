@@ -1,0 +1,110 @@
+
+.bg{
+  min-height: 100vh;
+}
+
+.login {
+  margin-top: 30px;
+  min-height: 75vh;
+  width: 75%;
+  text-align: center;
+  display: inline-flex;
+  box-shadow: 0 0 10px #fff;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  overflow: hidden;
+}
+
+.pic {
+  min-height: 75vh;
+  width: 50%;
+}
+
+.form{
+  min-height: 75vh;
+  width: 50%;
+}
+
+.form .form-text{
+  width: 250px;
+}
+
+.input-field {
+  height: 40px;
+  width: 90%;
+  border: 1px solid rgb(202, 198, 200);
+  outline: none;
+  padding: 5px 25px;
+  margin-top: 10px;
+  font-size: medium;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.icon {
+  font-size: 1.2rem;
+  position: absolute;
+  padding: 15px 10px 15px 5px;
+  color: rgb(165, 157, 157);
+}
+
+.pic img{
+  height: 100%;
+  width: 100%;
+}
+
+#phone_,#phone{
+  width: 100%;
+  margin-top: 10px;
+}
+/* #292841
+   #5865f2
+*/
+
+.bttn{
+  width: 90%;
+}
+
+
+.discord{
+  background-color: #394194;
+}
+
+.discord:hover{
+  background-color: #282d68;
+}
+
+.or{
+  position: relative;
+  color: #ccc;
+}
+
+.or::after{
+  right: 15%;
+}
+
+.or::before{
+  left: 15%;
+}
+
+.or::after,
+.or::before{
+  content: '';
+  width: 30%;
+  height: 1px;
+  background-color: #ccc;
+  top: 50%;
+  position: absolute;
+}
+
+a.signup-link{
+  text-decoration: none;
+  font-weight: 600;
+  color: #c00f0c;
+}

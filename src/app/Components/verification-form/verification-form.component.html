@@ -1,0 +1,21 @@
+<section class="verify container-fluid  mx-auto d-flex justify-content-center align-items-center bg">
+  <div class="opt-card bg-dark">
+    <h1>Email Verification</h1>
+    <p>Code has been send to {{confirm?.email}}</p>
+    <div class="opt-card-inputs">
+      <input type="text" [(ngModel)]="verificationCode[0]" maxlength="1" #txt1 (keyup)="move($event,'',txt1,txt2)" placeholder="_">
+      <input type="text" [(ngModel)]="verificationCode[1]" maxlength="1" #txt2 (keyup)="move($event,txt1,txt2,txt3)" placeholder="_">
+      <input type="text" [(ngModel)]="verificationCode[2]" maxlength="1" #txt3 (keyup)="move($event,txt2,txt3,txt4)" placeholder="_">
+      <input type="text" [(ngModel)]="verificationCode[3]" maxlength="1" #txt4 (keyup)="move($event,txt3,txt4,txt5)" placeholder="_">
+      <input type="text" [(ngModel)]="verificationCode[4]" maxlength="1" #txt5 (keyup)="move($event,txt4,txt5,'')" placeholder="_">
+    </div>
+    <ng-container>
+      <div *ngIf="IsNotValidCode" class="text-danger m-0 p-0">
+        Invalid Code, we send it again
+      </div>
+    </ng-container>
+    <button (click)="verify()" [disabled]="IsDisable" class="bttn">
+      <span *ngIf="checkCode" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      VERIFY</button>
+  </div>
+</section>
