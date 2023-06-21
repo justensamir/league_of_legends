@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { VerificationFormComponent } from './Components/verification-form/verification-form.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { HomeComponent } from './Components/home/home.component';
+import { ContactusComponent } from './Components/contactus/contactus.component';
+import { ForgetComponent } from './Components/forget/forget.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { RegisterComponent } from './Components/register/register.component';
     NavbarComponent,
     FooterComponent,
     VerificationFormComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    ContactusComponent,
+    ForgetComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,6 @@ import { RegisterComponent } from './Components/register/register.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

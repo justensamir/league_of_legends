@@ -1,29 +1,44 @@
 import { Injectable, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class AuthenticationService implements OnInit{
-  baseAddress: string = "http://amrelselenee-001-site1.htempurl.com/api/UserAuthentication/"
-  loginRequestUrl: string = "Login"
-  registerRequestUrl: string = "Register"
-  confirmEmailRequestUrl: string = "ConfirmEmail"
-  constructor(private http:HttpClient) { }
-  ngOnInit(): void {
+export class AuthenticationService implements OnInit {
+  baseAddress: string = 'https://localhost:7255/api/UserAuthentication/';
 
+  constructor(private http: HttpClient) {}
+  ngOnInit(): void {}
+
+  login(user: any) {
+    return this.http.post(this.baseAddress + 'Login', user);
   }
 
-  login(user:any){
-    return this.http.post(this.baseAddress + "Login",user);
+  register(user: any) {
+    return this.http.post(this.baseAddress + 'Register', user);
   }
 
-  register(user:any){
-    return this.http.post(this.baseAddress + "Register",user);
+  confirmEmail(confirm: any) {
+    return this.http.post(this.baseAddress + 'ConfirmEmail', confirm);
   }
 
-  confirmEmail(confirm:any){
-    return this.http.post(this.baseAddress + "ConfirmEmail",confirm);
+  forgetPassword(email: any) {
+    return this.http.put(this.baseAddress + 'ForgetPassword', { email: email });
   }
 
+  confirmPassword(Email: string, Code: number, Password: string, Token:string) {
+    let obj = {
+      email: Email,
+      code: Code,
+      token: Token,
+      newPassword: Password
+    }
+    
+    console.log(obj)
+    return this.http.post(this.baseAddress + 'ConfirmPassword', obj);
+  }
+
+  resendCode(Email: string){
+    return this.http.post(this.baseAddress + 'ReSendCode', {email: Email})
+  }
 }

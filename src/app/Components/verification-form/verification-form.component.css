@@ -1,6 +1,7 @@
 .verify{
   height: calc(100vh - 73px);
 }
+
 .opt-card{
   min-width: 300px;
   max-width: 600px;
@@ -12,8 +13,8 @@
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
-  padding: 3rem;
-  box-shadow: 0 10px  40px -20px #fff;
+  padding: 2.5rem;
+  box-shadow: 0 0 10px #fff;
 }
 
 .opt-card-inputs {
@@ -66,6 +67,18 @@
   cursor: default;
 }
 
+
+.alert{
+  position: relative;
+}
+
+.close-alert {
+  position: absolute;
+  top: -5px;
+  right: 2px;
+  font-size: 26px;
+  cursor: pointer;
+}
 
 @media (max-width: 400px){
   .opt-card-inputs{

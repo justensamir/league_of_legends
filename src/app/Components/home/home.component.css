@@ -1,0 +1,179 @@
+.land-page {
+  background-image: url("../../../assets/images/Shaco_0.jpg");
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 73px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.land-page::before{
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.text{
+  position: absolute;
+}
+h1{
+  font-size: 3.5rem;
+}
+
+.store-text
+{
+  color: var(--temp-color)
+}
+span{
+  font-weight: 700;
+}
+p{
+  max-width: 600px;
+  color: #ccc;
+}
+
+.bttn {
+  cursor: pointer;
+  padding: 0 30px;
+}
+
+/* Stats */
+
+.stats {
+	padding: 30px 0px 100px;
+	position: relative;
+	background-color: #ededed;
+	/* background-image: url("../../../assets/images/pngwing.com.png");
+  background-repeat: no-repeat; */
+}
+
+.stats-num {
+	margin: 15px 0px;
+	font-size: 50px;
+	font-weight: bolder;
+	color: #333;
+}
+
+.stats-cont {
+	background-color: rgb(255, 255, 255);
+	text-align: center;
+	padding: 40px 0px;
+	border-radius: 5px;
+	position: relative;
+	width: 280px;
+	text-align: center;
+	margin: auto;
+	box-shadow: 3px 3px 10px 0px #b5b5b5;
+}
+
+
+.stats-cont::before {
+	position: absolute;
+	content: "";
+	bottom: 0;
+	left: 0;
+	width: 4px;
+	height: 0%;
+	background-color: var(--main-color);
+	transition: 0.5s all ease-in-out;
+}
+
+.stats-cont::after {
+	position: absolute;
+	content: "";
+	top: 0;
+	right: 0;
+	width: 4px;
+	height: 0%;
+	background-color: var(--main-color);
+	transition: 0.5s all ease-in-out;
+}
+
+.stats-txt::before {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 4px;
+	background-color: var(--main-color);
+	transition: 0.5s all ease-in-out;
+	-webkit-transition: 0.5s all ease-in-out;
+	-moz-transition: 0.5s all ease-in-out;
+	-ms-transition: 0.5s all ease-in-out;
+	-o-transition: 0.5s all ease-in-out;
+}
+
+.stats-txt::after {
+	position: absolute;
+	content: '';
+	bottom: 0;
+	right: 0;
+	width: 0;
+	height: 4px;
+	background-color: var(--main-color);
+	transition: 0.5s all ease-in-out;
+	-webkit-transition: 0.5s all ease-in-out;
+	-moz-transition: 0.5s all ease-in-out;
+	-ms-transition: 0.5s all ease-in-out;
+	-o-transition: 0.5s all ease-in-out;
+}
+
+.stats-cont:hover:before {
+	height: 50%;
+}
+
+.stats-cont:hover .stats-txt::before{
+	width: 50%;
+}
+
+.stats-cont:hover .stats-txt::after{
+	width: 50%;
+}
+
+.stats-cont:hover:after {
+	height: 50%;
+}
+
+.stats-cont svg {
+	font-size: 30px;
+	color: #333;
+}
+
+.stats-txt {
+	color: var(--main-color);
+	font-size: 25px;
+	font-style: italic;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+.stats h2 {
+	text-align: center;
+  width: fit-content;
+	/* margin: 70px auto; */
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 40px;
+	font-style: italic;
+	color: var(--main-color);
+	position: relative;
+}
+
+.stats h2::before {
+	content: "";
+	position: absolute;
+	height: 4px;
+  bottom: -10px;
+  left: 25%;
+  width: 50%;
+	background-color: var(--main-color);
+}
+
+.icon {
+  font-size: 2.3rem;
+}

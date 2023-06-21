@@ -1,1 +1,12 @@
 @import url('../login/login.component.css');
+
+.input-icon
+{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.fname,
+.lname {
+  width: 95%;
+}

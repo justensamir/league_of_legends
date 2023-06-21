@@ -106,7 +106,7 @@ export class RegisterComponent implements OnInit{
         next: (response: any) => {
           this.IsDisable = false
           this.isExist = false
-          this.cookieService.set("email",String(this.getRegEmail))
+          this.cookieService.set("email",String(this.getRegEmail.value))
           this.cookieService.set("token",response.token)
           this.router.navigate(['/verify'])
         },
@@ -127,5 +127,4 @@ export class RegisterComponent implements OnInit{
       console.log(country)
     }
   }
-
 }

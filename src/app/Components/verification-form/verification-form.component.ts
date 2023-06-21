@@ -16,10 +16,14 @@ export class VerificationFormComponent implements OnInit {
     email: '',
     code: 0,
     token: '',
-  };
-  IsNotValidCode: boolean = false;
-  IsDisable: boolean = true;
-  checkCode: boolean = false;
+  }
+
+  IsNotValidCode: boolean = false
+  IsDisable: boolean = true
+  checkCode: boolean = false
+  showAlert: boolean = false
+  isCodeSend: boolean = false
+  alertMessage: string = ''
   constructor(
     private cookie: CookieService,
     private auth: AuthenticationService,
@@ -59,6 +63,7 @@ export class VerificationFormComponent implements OnInit {
     this.auth.confirmEmail(this.confirm).subscribe({
       next: (response: any) => {
         this.IsNotValidCode = false
+        this.checkCode = false
         this.cookie.delete("token")
         this.cookie.delete("email")
         Swal.fire({
@@ -79,5 +84,23 @@ export class VerificationFormComponent implements OnInit {
         this.IsDisable = false
       }
     });
+  }
+
+  resendCode(){
+    this.showAlert = true
+    this.auth.resendCode(this.confirm.email).subscribe({
+      next: (response: any) => {
+        this.isCodeSend = true
+        this.alertMessage = 'Code Send Successfully'
+      },
+      error: (err:any) => {
+        this.isCodeSend = false
+        this.alertMessage = 'Check Your Network!!'
+      }
+    })
+  }
+
+  closeAlert(){
+    this.showAlert = false
   }
 }

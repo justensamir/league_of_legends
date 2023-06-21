@@ -4,6 +4,7 @@
 :root{
   --main-color: #A00F0D;
   --secondary-color: #282d68;
+  --temp-color: #e6b135;
 }
 
 *{
@@ -15,6 +16,7 @@
 
 body{
   font-family: 'Poppins', sans-serif;
+  caret-color: var(--main-color);
 }
 
 /* width */
@@ -66,6 +68,33 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   -webkit-border-radius: 8;
 }
 
-.bttn:hover{
-  opacity: 0.9;
+.bttn:hover {
+  background-color: #7e0909;
+}
+
+a.link{
+  text-decoration: none;
+  font-weight: 600;
+  color: #c00f0c;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+a.link:hover{
+  text-shadow: 0 5px 5px var(--main-color);
+}
+
+.verify-icon{
+  background-color: var(--main-color);
+  font-size: 3rem;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }

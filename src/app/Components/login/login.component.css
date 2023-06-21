@@ -1,11 +1,11 @@
 
 .bg{
-  min-height: 100vh;
+  min-height: calc(100vh - 73px);
 }
 
 .login {
   margin-top: 30px;
-  min-height: 75vh;
+  height: fit-content;
   width: 75%;
   text-align: center;
   display: inline-flex;
@@ -19,12 +19,12 @@
 }
 
 .pic {
-  min-height: 75vh;
+  min-height: 100%;
   width: 50%;
 }
 
 .form{
-  min-height: 75vh;
+  min-height: 100%;
   width: 50%;
 }
 
@@ -86,25 +86,51 @@
 }
 
 .or::after{
-  right: 15%;
+  right: 5%;
 }
 
 .or::before{
-  left: 15%;
+  left: 5%;
 }
 
 .or::after,
 .or::before{
   content: '';
-  width: 30%;
+  width: 40%;
   height: 1px;
   background-color: #ccc;
   top: 50%;
   position: absolute;
 }
 
-a.signup-link{
-  text-decoration: none;
-  font-weight: 600;
-  color: #c00f0c;
+
+@media (max-width: 990px){
+  .login{
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px){
+  .pic{
+    display: none;
+  }
+  .form{
+    width: 100%
+  }
+  .form .form-text{
+    width: 200px;
+  }
+}
+
+@media (max-width: 400px){
+  .form{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .input-icon,.flname {
+    padding: 0;
+  }
+  .text{
+    font-size: 0.9rem;
+  }
 }

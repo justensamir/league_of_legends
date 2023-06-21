@@ -1,0 +1,133 @@
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+  line-height: 1.5;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul{
+  list-style: none;
+}
+
+.footer{
+  /* background-color: #24262b; */
+  padding: 50px 0 0;
+}
+
+.footer-col{
+  width: 25%;
+  padding: 0 15px;
+}
+
+.footer-col h4{
+  font-size: 18px;
+  /* color: var(--items-color); */
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col h4::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: var(--temp-color);
+  height: 2px;
+  width: 50px;
+}
+.footer-col ul{
+  padding-left: 1rem;
+}
+.footer-col ul li{
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #bbbbbb;
+  font-weight: 500;
+  display: block;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+  color: var(--temp-color);
+  padding-left: 8px;
+}
+
+.footer-col .social-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  color: #fff;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.footer-col .social-links a:hover{
+  background-color: #fff;
+}
+
+.footer-col .social-links a:first-child:hover{
+  color: rgb(46, 46, 199)
+}
+.footer-col .social-links a:nth-child(2):hover{
+  color: purple
+}
+.footer-col .social-links a:nth-child(3):hover{
+  color: green
+}
+.footer-col .social-links a:last-child:hover{
+  color: var(--secondary-color)
+}
+
+footer p {
+  color: #bbbbbb;
+  /* margin: 0 auto; */
+  /* background-color: #141416; */
+  /* width: 100%; */
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+}
+
+@media (max-width: 767px){
+  .footer-col{
+      width: 50%;
+      margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 574px){
+  .footer-col{
+      width: 100%;
+  }
+  footer>p{
+      font-size: 12px;
+  }
+}

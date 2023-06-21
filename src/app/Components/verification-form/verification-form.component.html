@@ -1,7 +1,12 @@
 <section class="verify container-fluid  mx-auto d-flex justify-content-center align-items-center bg">
   <div class="opt-card bg-dark">
-    <h1>Email Verification</h1>
-    <p>Code has been send to {{confirm?.email}}</p>
+    <div *ngIf="showAlert" [ngClass]="{'alert-success':isCodeSend, 'alert-danger': !isCodeSend}" class="alert" role="alert">
+      <p class="m-0">{{alertMessage}}</p>
+      <i class="bi bi-x close-alert" (click)="closeAlert()"></i>
+    </div>
+    <div class="verify-icon mx-auto"><i class="bi bi-shield-fill-check"></i></div>
+    <h3 class="mt-2">Verify your Email</h3>
+    <!-- <p>{{confirm?.email}}</p> -->
     <div class="opt-card-inputs">
       <input type="text" [(ngModel)]="verificationCode[0]" maxlength="1" #txt1 (keyup)="move($event,'',txt1,txt2)" placeholder="_">
       <input type="text" [(ngModel)]="verificationCode[1]" maxlength="1" #txt2 (keyup)="move($event,txt1,txt2,txt3)" placeholder="_">
@@ -11,11 +16,13 @@
     </div>
     <ng-container>
       <div *ngIf="IsNotValidCode" class="text-danger m-0 p-0">
-        Invalid Code, we send it again
+        Invalid Code
       </div>
     </ng-container>
     <button (click)="verify()" [disabled]="IsDisable" class="bttn">
       <span *ngIf="checkCode" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
       VERIFY</button>
+    <p class="mt-3">If you didn't receive a code!! <a class="link" href="#" (click)="resendCode()">RESEND</a> </p>
+
   </div>
 </section>

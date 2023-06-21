@@ -6,41 +6,42 @@
       </div>
       <form (ngSubmit)="register()" [formGroup]="registerForm" class="form p-3 bg-dark">
         <div class="mt-3 mb-4">
-          <img class="form-text" src="../../../assets/images/signup1.png" alt="" loading="lazy">
+          <img class="form-text" src="../../../assets/images/signup1.png" alt="" loading="eager">
         </div>
         <section class="row">
-          <div class="input-icon col-sm-12 col-md-6">
-            <input type="text" formControlName="firstName" class="input-field" placeholder="First Name"
-              autocomplete="off">
-            <ng-container *ngIf="getRegFirstName.touched">
-              <div *ngIf="getRegFirstName.hasError('required')" class="text-danger text-start ps-5">
-                required
-              </div>
-              <div *ngIf="getRegFirstName.hasError('min')" class="text-danger text-start ps-5">
-                minimum length 3 chars
-              </div>
-              <div *ngIf="getRegFirstName.hasError('max')" class="text-danger text-start ps-5">
-                maximum length 15 chars
-              </div>
-            </ng-container>
-          </div>
+          <div class="flname row col-12 mx-auto">
+            <div class="input-icon col-sm-12 col-md-6">
+              <input type="text" formControlName="firstName" class="input-field fname" placeholder="First Name"
+                autocomplete="off">
+              <ng-container *ngIf="getRegFirstName.touched">
+                <div *ngIf="getRegFirstName.hasError('required')" class="text-danger text-start ps-5">
+                  required
+                </div>
+                <div *ngIf="getRegFirstName.hasError('min')" class="text-danger text-start ps-5">
+                  minimum length 3 chars
+                </div>
+                <div *ngIf="getRegFirstName.hasError('max')" class="text-danger text-start ps-5">
+                  maximum length 15 chars
+                </div>
+              </ng-container>
+            </div>
 
-          <div class="input-icon col-sm-12 col-md-6">
-            <input type="text" formControlName="lastName" class="input-field" placeholder="Last Name"
-              autocomplete="off">
-            <ng-container *ngIf="getRegLastName.touched">
-              <div *ngIf="getRegLastName.hasError('required')" class="text-danger text-start ps-5">
-                required
-              </div>
-              <div *ngIf="getRegLastName.hasError('min')" class="text-danger text-start ps-5">
-                minimum length 3 chars
-              </div>
-              <div *ngIf="getRegLastName.hasError('max')" class="text-danger text-start ps-5">
-                maximum length 15 chars
-              </div>
-            </ng-container>
+            <div class="input-icon col-sm-12 col-md-6">
+              <input type="text" formControlName="lastName" class="input-field lname" placeholder="Last Name"
+                autocomplete="off">
+              <ng-container *ngIf="getRegLastName.touched">
+                <div *ngIf="getRegLastName.hasError('required')" class="text-danger text-start ps-5">
+                  required
+                </div>
+                <div *ngIf="getRegLastName.hasError('min')" class="text-danger text-start ps-5">
+                  minimum length 3 chars
+                </div>
+                <div *ngIf="getRegLastName.hasError('max')" class="text-danger text-start ps-5">
+                  maximum length 15 chars
+                </div>
+              </ng-container>
+            </div>
           </div>
-
           <div class="input-icon col-12">
             <input type="email" formControlName="email" class="input-field" placeholder="user@example.com"
               autocomplete="off">
@@ -56,7 +57,14 @@
               </div>
             </ng-container>
           </div>
-
+          <!-- <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Outline form field</mat-label>
+              <input matInput placeholder="Placeholder">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p> -->
           <div class="input-icon col-12">
             <input type="password" formControlName="password" class="input-field" placeholder="Password"
               autocomplete="off">
@@ -94,10 +102,10 @@
               </div>
             </ng-container>
           </div>
-          <button type="submit" class="bttn signin mx-auto" [disabled]="IsDisable">
+          <button type="submit" class="bttn signin mx-auto my-3" [disabled]="IsDisable">
             <span *ngIf="IsDisable" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             SIGN UP</button>
-          <p class="text-light my-3">Already have an account <a class="signup-link" [routerLink]="['/signin']">Sign In</a></p>
+          <p class="text-light mb-3">Already have an account <a class="link" [routerLink]="['/signin']">Sign In</a></p>
         </section>
       </form>
     </div>

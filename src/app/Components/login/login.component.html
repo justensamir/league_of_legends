@@ -1,9 +1,10 @@
-<div class="bg container-fluid mb-5">
-  <div class="container d-flex justify-content-center align-items-center flex-column mx-auto">
-    <div class="login">
+<div class="bg container-fluid mb-5 d-flex justify-content-center align-items-center">
+  <div class="container d-flex justify-content-center align-items-center mx-auto">
+    <div class="login mb-5">
       <div class="pic">
         <img src="../../../assets/images/Prestige Inkshadow Yasuo.jpeg" loading="lazy" />
       </div>
+
       <form (ngSubmit)="login()" [formGroup]="loginForm" class="form p-3 bg-dark">
         <div class="mt-3 mb-4">
           <img class="form-text" src="../../../assets/images/signin3.png" alt="" loading="lazy">
@@ -34,19 +35,21 @@
             <div *ngIf="getLogPassword.hasError('pattern')" class="text-danger text-start ps-5">
               Invalid Password
             </div>
+            <div *ngIf="invalidEmailOrPassword" class="text-danger text-start ps-5">
+              Invalid Email Or Password
+            </div>
           </ng-container>
-
         </div>
 
-        <button type="submit" class="bttn signin">SIGN IN</button>
+        <button type="submit" class="bttn signin mx-auto mt-3" [disabled]="IsDisable">
+          <span *ngIf="IsDisable" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          SIGN IN</button>
         <p class="or my-3">or</p>
-        <button class="bttn discord mb-3 mt-0"><i class="bi bi-discord"></i> Continue with Discord</button>
-        <p class="text-light my-3">Don't have an account <a class="signup-link" href="#" [routerLink]="['/signup']">Sign Up</a></p>
+        <button class="bttn discord mb-3 mt-0"><i class="bi bi-discord me-2"></i>Sigin with Discord</button>
+        <p class="text-light mb-3 text">Don't have an account <a class="link" href="#" [routerLink]="['/signup']">Sign Up</a></p>
+        <p class="text-light mb-3 text"><a class="link" href="#" [routerLink]="['/forget']">Forget Password?</a></p>
+
       </form>
     </div>
   </div>
 </div>
-
-<!-- <app-register></app-register> -->
-
-<!-- <app-verification-form></app-verification-form> -->

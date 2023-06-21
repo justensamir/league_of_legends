@@ -1,0 +1,42 @@
+<section class="verify container-fluid  mx-auto d-flex justify-content-center align-items-center bg">
+  <div class="form-container bg-dark text-light">
+    <div class="logo-container">
+      <div class="verify-icon mx-auto">
+        <i class="bi bi-shield-lock-fill text-light"></i>
+      </div>
+      Forgot Password
+    </div>
+
+    <form class="form w-100">
+      <div class="form-group">
+
+        <input type="email" (input)="getEmail($event)" placeholder="Enter your Email" required [pattern]="emailRegex">
+        <div *ngIf="isNotValidEmail" class="text-danger text-start">
+          Invalid Email
+        </div>
+        <ng-container *ngIf="isConfirm">
+          <input type="number" (input)="getCode($event)" class="my-2" placeholder="Enter your Code" required
+            [pattern]="codeRegex">
+          <div *ngIf="isNotValidCode" class="text-danger text-start">
+            Invalid Code
+          </div>
+
+          <input type="password" (input)="getPass($event)" placeholder="Enter your new Password" required
+            [pattern]="passRegex">
+          <div *ngIf="isNotValidPass" class="text-danger text-start">
+            Invalid Password
+          </div>
+        </ng-container>
+      </div>
+
+      <button class="form-submit-btn bttn" [disabled]="isDisable" type="submit" (click)="sendEmail()">
+        <span *ngIf="isDisable" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        {{isConfirm? "Reset Password": "Send Code"}}</button>
+    </form>
+
+    <p class="signup-link">
+      Don't have an account?
+      <a href="#" class="link" [routerLink]="['/signup']"> Sign up now</a>
+    </p>
+  </div>
+</section>
