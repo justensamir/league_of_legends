@@ -33,12 +33,16 @@ export class AuthenticationService implements OnInit {
       token: Token,
       newPassword: Password
     }
-    
+
     console.log(obj)
     return this.http.post(this.baseAddress + 'ConfirmPassword', obj);
   }
 
   resendCode(Email: string){
     return this.http.post(this.baseAddress + 'ReSendCode', {email: Email})
+  }
+
+  getDiscordLogin(){
+    return this.http.get(this.baseAddress+'GetLoginTokenWithDiscord')
   }
 }

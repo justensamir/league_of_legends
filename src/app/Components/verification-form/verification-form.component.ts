@@ -87,13 +87,14 @@ export class VerificationFormComponent implements OnInit {
   }
 
   resendCode(){
-    this.showAlert = true
     this.auth.resendCode(this.confirm.email).subscribe({
       next: (response: any) => {
+        this.showAlert = true
         this.isCodeSend = true
         this.alertMessage = 'Code Send Successfully'
       },
       error: (err:any) => {
+        this.showAlert = true
         this.isCodeSend = false
         this.alertMessage = 'Check Your Network!!'
       }

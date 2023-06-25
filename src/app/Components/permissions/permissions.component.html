@@ -1,0 +1,54 @@
+<ng-container *ngIf="load">
+  <app-loader></app-loader>
+</ng-container>
+
+<ng-container *ngIf="!load">
+<!-- Permissions -->
+<div class="col-12">
+  <div class="card recent-sales overflow-auto dark-item">
+
+    <div class="card-body">
+      <div class="row justify-content-between">
+        <div class="col-auto">
+          <h5 class="card-title text-light">Admins <span>| Permissions</span></h5>
+        </div>
+        <div class="col-auto">
+          <input type="text" class="form-control mt-3" placeholder="Search...">
+        </div>
+      </div>
+      <table class="table table-borderless datatable">
+        <thead>
+          <tr>
+            <th scope="col" class="dark-item text-light">#</th>
+            <th scope="col" class="dark-item text-light">Name</th>
+            <th scope="col" class="dark-item text-light">Email</th>
+            <th class="text-center dark-item text-light" scope="col">Add_Item</th>
+            <th class="text-center dark-item text-light" scope="col">Edit_Item</th>
+            <th class="text-center dark-item text-light" scope="col">Delete_Item</th>
+            <th class="text-center dark-item text-light" scope="col">Add_Account</th>
+            <th class="text-center dark-item text-light" scope="col">Edit_Account</th>
+            <th class="text-center dark-item text-light" scope="col">Delete_Account</th>
+            <th class="text-center dark-item text-light" scope="col">Complains</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let admin of admins; let i = index">
+            <th class="dark-item text-light" scope="row">#{{i+1}}</th>
+            <td class="dark-item text-light">{{admin?.firstName + ' ' + admin?.lastName}}</td>
+            <td class="dark-item text-light">{{admin?.email}}</td>
+            <td class="text-center dark-item text-light"><input (change)="permission($event,admin?.email)" class="form-check-input fs-6" type="checkbox" [checked]="permissions[i]?.Add_Item" value="Add_Item"></td>
+            <td class="text-center dark-item text-light"><input (change)="permission($event,admin?.email)" class="form-check-input fs-6" type="checkbox" [checked]="permissions[i]?.Edit_Item" value="Edit_Item"></td>
+            <td class="text-center dark-item text-light"><input (change)="permission($event,admin?.email)" class="form-check-input fs-6" type="checkbox" [checked]="permissions[i]?.Delete_Item" value="Delete_Item"></td>
+            <td class="text-center dark-item text-light"><input (change)="permission($event,admin?.email)" class="form-check-input fs-6" type="checkbox" [checked]="permissions[i]?.Add_Account" value="Add_Account"></td>
+            <td class="text-center dark-item text-light"><input (change)="permission($event,admin?.email)" class="form-check-input fs-6" type="checkbox" [checked]="permissions[i]?.Edit_Account" value="Edit_Account"></td>
+            <td class="text-center dark-item text-light"><input (change)="permission($event,admin?.email)" class="form-check-input fs-6" type="checkbox" [checked]="permissions[i]?.Delete_Account" value="Delete_Account"></td>
+            <td class="text-center dark-item text-light"><input (change)="permission($event,admin?.email)" class="form-check-input fs-6" type="checkbox" [checked]="permissions[i]?.Complains" value="Complains"></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div><!-- End Permissions -->
+</ng-container>

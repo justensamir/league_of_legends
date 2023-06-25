@@ -1,0 +1,4 @@
+@import url('../admin-dashboard/admin-dashboard.component.css');
+.badge-pending{
+  background-color: orange;
+}

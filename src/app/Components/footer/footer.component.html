@@ -1,41 +1,45 @@
-<footer class="bg-dark">
-  <div class="footer text-light">
+<ng-container *ngIf="shared.user.role == 'User'">
+
+  <footer class="bg-dark">
+    <div class="footer text-light">
       <div class="container">
-          <div class="row">
-              <div class="footer-col">
-                <h4> SHACO STORE</h4>
-                <img src="../../../assets/images/logo80x80.png" alt="logo" loading="lazy">
-              </div>
-
-              <div class="footer-col">
-                  <h4>Useful Links</h4>
-                  <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Games</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">payment options</a></li>
-                  </ul>
-              </div>
-              <div class="footer-col">
-                  <h4>Our Services</h4>
-                  <ul>
-                      <li><a href="#">Accounts</a></li>
-                      <li><a href="#">Items</a></li>
-                  </ul>
-              </div>
-              <div class="footer-col">
-                  <h4>follow us</h4>
-                  <div class="social-links">
-                      <a href="#"><i class="bi bi-facebook"></i></a>
-                      <a href="#"><i class="bi  bi-instagram"></i></a>
-                      <a href="#"><i class="bi bi-whatsapp"></i></a>
-                      <a href="#"><i class="bi bi-discord"></i></a>
-
-                  </div>
-              </div>
+        <div class="row">
+          <div class="footer-col">
+            <h4> SHACO STORE</h4>
+            <img src="../../../assets/images/logo80x80.png" alt="logo" loading="lazy">
           </div>
-          <hr>
-          <p class="mx-auto">All Rights Reserved &copy; Mr Shaco 2023</p>
+
+          <div class="footer-col">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Games</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="#">Accounts</a></li>
+              <li><a href="#">Items</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi  bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-whatsapp"></i></a>
+              <a href="#"><i class="bi bi-discord"></i></a>
+
+            </div>
+          </div>
+        </div>
+        <hr>
+        <p class="mx-auto">All Rights Reserved &copy; Mr Shaco 2023</p>
       </div>
-  </div>
-</footer>
+    </div>
+  </footer>
+
+</ng-container>

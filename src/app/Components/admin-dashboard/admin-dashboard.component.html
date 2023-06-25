@@ -1,0 +1,95 @@
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar dark-item">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link dark-item text-light" (click)="setAdmins()">
+        <i class="bi bi-grid text-light"></i>
+        <span>Dashboard</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed dark-item text-light" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-layout-text-window-reverse text-light"></i><span>Admins</span><i class="bi bi-chevron-down ms-auto text-light"></i>
+      </a>
+      <ul id="components-nav" class="nav-content collapse text-light" data-bs-parent="#sidebar-nav">
+        <li>
+          <a class="text-light" (click)="setAddAdmin()">
+            <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Add</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed dark-item text-light" (click)="setPermissions()">
+        <i class="bi bi-layers text-light"></i>
+        <span>Permissions</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed dark-item text-light" (click)="setActions()">
+        <i class="bi bi-boxes text-light"></i>
+        <span>Actions</span>
+      </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link collapsed dark-item text-light" (click)="setProfile()">
+        <i class="bi bi-person text-light"></i>
+        <span>Profile</span>
+      </a>
+    </li><!-- End Profile Page Nav -->
+
+  </ul>
+
+</aside><!-- End Sidebar-->
+
+<main id="main" class="main dark-main h-100">
+
+  <div class="pagetitle">
+    <h1 class="text-light">Dashboard</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <ng-container *ngIf="dashboard.admins">
+          <li class="breadcrumb-item active">Admins</li>
+        </ng-container>
+        <ng-container *ngIf="dashboard.addAdmin">
+          <li class="breadcrumb-item active">Admins</li>
+          <li class="breadcrumb-item active">Add</li>
+        </ng-container>
+        <ng-container *ngIf="dashboard.actions">
+          <li class="breadcrumb-item active">Admins</li>
+          <li class="breadcrumb-item active">Actions</li>
+        </ng-container>
+        <ng-container *ngIf="dashboard.permissions">
+          <li class="breadcrumb-item active">Admins</li>
+          <li class="breadcrumb-item active">Permissions</li>
+        </ng-container>
+        <ng-container *ngIf="dashboard.profile">
+          <li class="breadcrumb-item active">Profile</li>
+        </ng-container>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+  <section class="section dashboard">
+    <div class="row">
+          <app-admins *ngIf="dashboard.admins"></app-admins>
+          <app-actions *ngIf="dashboard.actions"></app-actions>
+          <app-add-admin *ngIf="dashboard.addAdmin"></app-add-admin>
+          <app-permissions *ngIf="dashboard.permissions"></app-permissions>
+          <app-profile *ngIf="dashboard.profile"></app-profile>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>

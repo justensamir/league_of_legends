@@ -1,10 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i');
 
 :root{
   --main-color: #A00F0D;
   --secondary-color: #282d68;
   --temp-color: #e6b135;
+  --dark-main: #222225;
+  --dark-item: #3d3d3f;
 }
 
 *{
@@ -19,25 +22,36 @@ body{
   caret-color: var(--main-color);
 }
 
-/* width */
+.dark-item{
+  background-color: var(--dark-item) !important;
+  color: #fff;
+}
+
+.dark-main{
+  background-color: var(--dark-main) !important;
+  color: #fff;
+}
+
+
+/* width
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+/*::-webkit-scrollbar-track {
   background: black;
-}
+}*/
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+/*::-webkit-scrollbar-thumb {
   background-image: linear-gradient(180deg,black, #641513);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-}
+} */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

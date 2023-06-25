@@ -22,7 +22,7 @@
     <button (click)="verify()" [disabled]="IsDisable" class="bttn">
       <span *ngIf="checkCode" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
       VERIFY</button>
-    <p class="mt-3">If you didn't receive a code!! <a class="link" href="#" (click)="resendCode()">RESEND</a> </p>
+    <p class="mt-3">If you didn't receive a code!! <a class="link" (click)="resendCode()">RESEND</a> </p>
 
   </div>
 </section>
