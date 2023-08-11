@@ -1,0 +1,26 @@
+<div class="card dark-item">
+  <div class="card-body">
+    <h5 class="card-title text-light">Servers <span>| Add</span></h5>
+
+
+    <!-- No Labels Form -->
+    <form (ngSubmit)="addServer()" [formGroup]="server" class="row g-3">
+
+      <div class="col-md-12">
+        <input type="url" formControlName="name" class="form-control" placeholder="Server name">
+        <ng-container *ngIf="serverName.touched">
+          <div *ngIf="serverName.hasError('required')" class="text-danger text-start ps-2">
+            required
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="text-end">
+        <button type="submit" class="bttn px-5">
+          <span *ngIf="IsDisable" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+           Add Server</button>
+      </div>
+    </form>
+
+  </div>
+</div>

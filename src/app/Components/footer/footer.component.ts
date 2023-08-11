@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SharedService } from '../SharedService/shared.service';
+import { SharedService } from '../Services/shared.service';
 
 @Component({
   selector: 'app-footer',

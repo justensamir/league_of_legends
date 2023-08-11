@@ -1,4 +1,4 @@
-import { SharedService } from './../SharedService/shared.service';
+import { SharedService } from '../Services/shared.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';

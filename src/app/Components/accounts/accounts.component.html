@@ -1,0 +1,56 @@
+<ng-container *ngIf="!shared.editAccount">
+  <ng-container *ngFor="let account of shared.accounts; let i=index">
+    <div class="card shadow-0 rounded-3 dark-item text-light mb-3">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+            <div class="bg-image hover-zoom ripple rounded ripple-surface">
+              <div class="d-flex justify-content-center align-items-center">
+                <img src="{{account?.imgUrl}}" class="pro-img" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-6">
+            <h5>{{account?.name}}</h5>
+            <div class="d-flex align-items-center">
+              <h6 class="mb-0 me-2">Server: </h6>
+              <span>{{account?.serverName}}</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <h6 class="mb-0 me-2">Category: </h6>
+              <span>{{account?.categoryName}}</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <h6 class="mb-0 me-2">Rank: </h6>
+              <span>{{account?.rankName}}</span>
+            </div>
+
+            <p class="text-truncate mb-4 mb-md-0">
+              {{account?.description}}
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+            <div class="d-flex flex-row align-items-center mb-1">
+              <h4 class="mb-1 me-1">${{account?.price}}</h4>
+
+            </div>
+
+            <div class="d-flex flex-column mt-4">
+              <ng-container *ngIf="shared.userPermissions.Edit_Account">
+
+                <button class="btn btn-warning btn-sm mb-2" type="button"
+                  (click)="editAccount(account.id)">Edit</button>
+              </ng-container>
+              <ng-container *ngIf="shared.userPermissions.Delete_Account">
+
+                <button class="btn btn-danger btn-sm" type="button"
+                  (click)="deleteAccount(account.id, i)">Delete</button>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
+<app-add-account *ngIf="shared.editAccount" [accountId]="accountId"></app-add-account>

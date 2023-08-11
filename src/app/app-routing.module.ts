@@ -11,6 +11,7 @@ import { AddAdminComponent } from './Components/add-admin/add-admin.component';
 import { PermissionsComponent } from './Components/permissions/permissions.component';
 import { ActionsComponent } from './Components/actions/actions.component';
 import { ProfileComponent } from './Components/profile/profile.component';
+import { AddAccountComponent } from './Components/add-account/add-account.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -19,10 +20,6 @@ const routes: Routes = [
   {path:"verify",component:VerificationFormComponent},
   {path:"forget", component:ForgetComponent},
   {path: 'AdminDashboard', component:AdminDashboardComponent},
-  {path: 'admins/add', component:AddAdminComponent},
-  {path: 'admins/permissions', component:PermissionsComponent},
-  {path: 'admin/actions', component:ActionsComponent},
-  {path: 'profile', component:ProfileComponent},
   {path:"**", component:NotFoundComponent}
 ];
 

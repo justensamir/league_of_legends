@@ -1,43 +1,603 @@
-<section class="land-page">
-  <div class="position-relative container mx-auto text-light d-flex flex-column justify-content-center w-100 h-100">
-    <div class="text">
-      <h1 class="text-light">Welcome to <span class="store-text">SHACO</span> <span> STORE</span></h1>
-      <p class="my-4 fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet id laboriosam, reiciendis deserunt ea
-        dignissimos,
-        dolorem rem magnam quisquam quos officiis repudiandae asperiores iusto accusantium nesciunt sit quibusdam natus
-        nam.</p>
-      <button class="bttn" (click)="print()">Explore</button>
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <a href="#" class="logo d-flex align-items-center me-auto me-xl-0">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <img src="assets/images/logo.png" alt="">
+
+      <h1>Mr Shaco</h1>
+      <span>.</span>
+    </a>
+
+    <!-- Nav Menu -->
+    <nav id="navmenu" class="navmenu">
+      <ul >
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#games">Games</a></li>
+        <li (click)="getCart()"><a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-cart2 fs-4"></i>
+          </a></li>
+      </ul>
+
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav><!-- End Nav Menu -->
+
+    <a class="btn-getstarted"  [routerLink]="['/signin']">Get Started</a>
+
+  </div>
+</header><!-- End Header -->
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel"><i class="bi bi-cart2 fs-4"></i> Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="master-container">
+      <div class="card cart">
+        <label class="title">Your cart</label>
+        <div class="products">
+          <div class="product position-relative">
+            <img src="assets/images/item5.jpg" alt="" style="width: 60px; height: 60px;">
+            <div class="product-detailes">
+              <span>Cheese Burger mohamed samir asaad</span>
+              <p>Item</p>
+            </div>
+
+            <label class="price small">$23.99</label>
+
+            <span class="delete"><i class="bi bi-x fs-4"></i></span>
+          </div>
+          <div class="product position-relative">
+            <img src="assets/images/item5.jpg" alt="" style="width: 60px; height: 60px;">
+            <div class="product-detailes">
+              <span>Cheese Burger mohamed samir asaad</span>
+              <p>Item</p>
+            </div>
+
+            <label class="price small">$23.99</label>
+
+            <span class="delete"><i class="bi bi-x fs-4"></i></span>
+          </div>
+          <div class="product position-relative">
+            <img src="assets/images/item5.jpg" alt="" style="width: 60px; height: 60px;">
+            <div class="product-detailes">
+              <span>Cheese Burger mohamed samir asaad</span>
+              <p>Item</p>
+            </div>
+
+            <label class="price small">$23.99</label>
+
+            <span class="delete"><i class="bi bi-x fs-4"></i></span>
+          </div>
+          <div class="product position-relative">
+            <img src="assets/images/item5.jpg" alt="" style="width: 60px; height: 60px;">
+            <div class="product-detailes">
+              <span>Cheese Burger mohamed samir asaad</span>
+              <p>Item</p>
+            </div>
+
+            <label class="price small">$23.99</label>
+
+            <span class="delete"><i class="bi bi-x fs-4"></i></span>
+          </div>
+          <div class="product position-relative">
+            <img src="assets/images/item5.jpg" alt="" style="width: 60px; height: 60px;">
+            <div class="product-detailes">
+              <span>Cheese Burger mohamed samir asaad</span>
+              <p>Item</p>
+            </div>
+
+            <label class="price small">$23.99</label>
+
+            <span class="delete"><i class="bi bi-x fs-4"></i></span>
+          </div>
+          <div class="product position-relative">
+            <img src="assets/images/item5.jpg" alt="" style="width: 60px; height: 60px;">
+            <div class="product-detailes">
+              <span>Cheese Burger mohamed samir asaad</span>
+              <p>Item</p>
+            </div>
+
+            <label class="price small">$23.99</label>
+
+            <span class="delete"><i class="bi bi-x fs-4"></i></span>
+          </div>
+          <div class="product position-relative">
+            <img src="assets/images/item5.jpg" alt="" style="width: 60px; height: 60px;">
+            <div class="product-detailes">
+              <span>Cheese Burger mohamed samir asaad</span>
+              <p>Item</p>
+            </div>
+
+            <label class="price small">$23.99</label>
+
+            <span class="delete"><i class="bi bi-x fs-4"></i></span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card checkout">
+        <label class="title">Checkout</label>
+
+        <div class="checkout--footer">
+          <label class="price"><sup>$</sup>57.99</label>
+          <button class="botn rounded">Checkout</button>
+        </div>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="stats">
-  <h2 class="section-title mb-5 mx-auto">our stats</h2>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-12 mb-3">
-        <div class="stats-cont h-100">
-          <i class="icon bi bi-person-fill"></i>
-          <div class="stats-num" data-goal="150">0</div>
-          <div class="stats-txt">clients</div>
+<main id="main">
+
+  <!-- Hero Section - Home Page -->
+  <section id="hero" class="hero">
+
+    <img src="assets/images/Shaco_0.jpg" alt="" data-aos="fade-in">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Our Store</h2>
+          <p data-aos="fade-up" data-aos-delay="200">Mr Shaco store provide all your needs
+          </p>
+          <a class="explore mt-3 d-inline-block" href="#products" data-aos="fade-up" data-aos-delay="300">Explore</a>
         </div>
+
       </div>
-      <div class="col-md-4 col-sm-12 mb-3">
-        <div class="stats-cont h-100">
-          <i class="icon bi bi-bag-fill"></i>
-          <div class="stats-num" data-goal="50">0</div>
-          <div class="stats-txt">orders</div>
+    </div>
+
+  </section><!-- End Hero Section -->
+
+
+  <!-- About Section - Home Page -->
+  <section id="about" class="about">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row align-items-xl-center gy-5">
+
+        <div class="col-xl-5 content">
+          <h3>About Us</h3>
+          <h2>Ducimus rerum libero reprehenderit cumque</h2>
+          <p>Ipsa sint sit. Quis ducimus tempore dolores impedit et dolor cumque alias maxime. Enim reiciendis minus et
+            rerum hic non. Dicta quas cum quia maiores iure. Quidem nulla qui assumenda incidunt voluptatem tempora
+            deleniti soluta.</p>
+
         </div>
+
+        <div class="col-xl-7">
+          <div class="row gy-4 icon-boxes">
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon-box">
+                <i class="bi bi-buildings"></i>
+                <h3>Eius provident</h3>
+                <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor voluptatem</p>
+              </div>
+            </div> <!-- End Icon Box -->
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon-box">
+                <i class="bi bi-clipboard-pulse"></i>
+                <h3>Rerum aperiam</h3>
+                <p>Autem saepe animi et aut aspernatur culpa facere. Rerum saepe rerum voluptates quia</p>
+              </div>
+            </div> <!-- End Icon Box -->
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon-box">
+                <i class="bi bi-command"></i>
+                <h3>Veniam omnis</h3>
+                <p>Omnis perferendis molestias culpa sed. Recusandae quas possimus. Quod consequatur corrupti</p>
+              </div>
+            </div> <!-- End Icon Box -->
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+              <div class="icon-box">
+                <i class="bi bi-graph-up-arrow"></i>
+                <h3>Delares sapiente</h3>
+                <p>Sint et dolor voluptas minus possimus nostrum. Reiciendis commodi eligendi omnis quideme lorenda</p>
+              </div>
+            </div> <!-- End Icon Box -->
+
+          </div>
+        </div>
+
       </div>
-      <div class=" col-md-4 col-sm-12 mb-3">
-        <div class="stats-cont h-100">
-          <i class="icon bi bi-globe-europe-africa"></i>
-          <div class="stats-num" data-goal="20">0</div>
-          <div class="stats-txt">countries</div>
+    </div>
+
+  </section><!-- End About Section -->
+
+  <!-- Services Section - Home Page -->
+  <section id="services" class="services">
+
+    <!--  Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Services</h2>
+      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+          <div class="service-item d-flex">
+            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
+            <div>
+              <h4 class="title"><a href="services-details.html" class="stretched-link">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                occaecati cupiditate non provident</p>
+            </div>
+          </div>
+        </div>
+        <!-- End Service Item -->
+
+        <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="200">
+          <div class="service-item d-flex">
+            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
+            <div>
+              <h4 class="title"><a href="services-details.html" class="stretched-link">Dolor Sitema</a></h4>
+              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat tarad limino ata</p>
+            </div>
+          </div>
+        </div><!-- End Service Item -->
+
+        <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="300">
+          <div class="service-item d-flex">
+            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
+            <div>
+              <h4 class="title"><a href="services-details.html" class="stretched-link">Sed ut perspiciatis</a></h4>
+              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur</p>
+            </div>
+          </div>
+        </div><!-- End Service Item -->
+
+        <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="400">
+          <div class="service-item d-flex">
+            <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
+            <div>
+              <h4 class="title"><a href="services-details.html" class="stretched-link">Magni Dolores</a></h4>
+              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum</p>
+            </div>
+          </div>
+        </div><!-- End Service Item -->
+
+      </div>
+
+    </div>
+
+  </section><!-- End Services Section -->
+
+  <!-- Features Section - Home Page -->
+  <section id="features" class="features">
+
+    <!--  Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Features</h2>
+      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-4 align-items-center features-item">
+        <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h3>Corporis temporibus maiores provident</h3>
+          <p>
+            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+          </p>
+          <a [routerLink]="['/signin']" class="btn btn-get-started">Get Started</a>
+        </div>
+        <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+          <div class="image-stack">
+            <img src="assets/img/features-light-1.jpg" alt="" class="stack-front">
+            <img src="assets/img/features-light-2.jpg" alt="" class="stack-back">
+          </div>
+        </div>
+      </div><!-- Features Item -->
+
+      <div class="row gy-4 align-items-stretch justify-content-between features-item ">
+        <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
+          <img src="assets/img/features-light-3.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
+          <h3>Sunt consequatur ad ut est nulla</h3>
+          <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia
+            voluptatem hic voluptas dolor doloremque.</p>
+          <ul>
+            <li><i class="bi bi-check"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+            <li><i class="bi bi-check"></i><span> Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+            <li><i class="bi bi-check"></i> <span>Facilis ut et voluptatem aperiam. Autem soluta ad fugiat</span>.</li>
+          </ul>
+          <a [routerLink]="['/signin']" class="btn btn-get-started align-self-start">Get Started</a>
+        </div>
+      </div><!-- Features Item -->
+
+    </div>
+
+  </section><!-- End Features Section -->
+
+  <!-- products Section - Home Page -->
+  <section id="products" class="products">
+
+    <!--  Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Products</h2>
+      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div><!-- End Section Title -->
+
+    <ul class="product-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+      <li class="filter-active me-2" (click)="getAllProducts()">All</li>
+      <li class="me-2" (click)="getAccounts()">Accounts</li>
+      <li (click)="getItems()">Items</li>
+      <li class="me-2" (click)="setFilter()"><i class="bi bi-sliders2"></i> Filters</li>
+    </ul>
+
+    <form *ngIf="showFilter" (ngSubmit)="filterProducts()" [formGroup]="filter" data-aos="zoom-in" data-aos-delay="100" class="filter rounded-3 p-3  row container mx-auto mt-2 mb-3 d-flex justify-content-center align-items-center g-3">
+      <div class="col-md-6 col-lg-3">
+        <select formControlName="server_Id" class="form-select">
+          <option value="0" class="text-center" selected>-- Select Server --</option>
+          <option *ngFor="let server of servers" [value]="server.id">{{server.name}}</option>
+        </select>
+      </div>
+      <div *ngIf="categories.items || categories.accounts" class="col-md-6 col-lg-3">
+        <select formControlName="category_Id" class="form-select">
+          <option value="0" class="text-center" selected>-- Select Category --</option>
+          <option *ngFor="let category of productCategories" [value]="category.id">{{category.name}}</option>
+        </select>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <select formControlName="rank_Id" class="form-select">
+          <option value="0" class="text-center" selected>-- Select Rank --</option>
+          <option *ngFor="let rank of ranks" [value]="rank.id">{{rank.name}}</option>
+        </select>
+
+      </div>
+      <div class="col-md-6 col-lg-3 align-self-center">
+        <button type="submit"  class="explore border-0"  ><i class="bi bi-filter"></i> Filter</button>
+      </div>
+    </form>
+
+    <div class="products container mx-auto d-flex flex-wrap justify-content-center">
+      <ng-container *ngIf="categories.all">
+        <ng-container  *ngFor="let product of items">
+          <app-product-card class="d-flex justify-content-center" [type]="'item'" [product]="product" data-aos="fade-up" data-aos-delay="100"></app-product-card>
+        </ng-container>
+        <ng-container  *ngFor="let product of accounts">
+          <app-product-card class="d-flex justify-content-center" [type]="'account'" [product]="product" data-aos="fade-up" data-aos-delay="100"></app-product-card>
+        </ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="categories.items">
+        <ng-container  *ngFor="let product of items">
+          <app-product-card class="d-flex justify-content-center" [type]="'item'" [product]="product" data-aos="fade-up" data-aos-delay="100"></app-product-card>
+        </ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="categories.accounts">
+        <ng-container  *ngFor="let product of accounts">
+          <app-product-card class="d-flex justify-content-center" [type]="'account'" [product]="product" data-aos="fade-up" data-aos-delay="100"></app-product-card>
+        </ng-container>
+      </ng-container>
+    </div>
+
+  </section><!-- End products Section -->
+
+  <!-- Team Section - Home Page -->
+  <section id="games" class="team">
+
+    <!--  Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Team</h2>
+      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-5">
+
+        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+          <div class="member-img">
+            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+            <div class="social">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info text-center">
+            <h4>Walter White</h4>
+            <span>Chief Executive Officer</span>
+            <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
+          </div>
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+          <div class="member-img">
+            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+            <div class="social">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info text-center">
+            <h4>Sarah Jhonson</h4>
+            <span>Product Manager</span>
+            <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores exercitationem
+              ut</p>
+          </div>
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
+          <div class="member-img">
+            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+            <div class="social">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info text-center">
+            <h4>William Anderson</h4>
+            <span>CTO</span>
+            <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at
+              qui</p>
+          </div>
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
+          <div class="member-img">
+            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+            <div class="social">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info text-center">
+            <h4>Amanda Jepson</h4>
+            <span>Accountant</span>
+            <p>Magni voluptatem accusamus assumenda cum nisi aut qui dolorem voluptate sed et veniam quasi quam
+              consectetur</p>
+          </div>
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
+          <div class="member-img">
+            <img src="assets/img/team/team-5.jpg" class="img-fluid" alt="">
+            <div class="social">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info text-center">
+            <h4>Brian Doe</h4>
+            <span>Marketing</span>
+            <p>Qui consequuntur quos accusamus magnam quo est molestiae eius laboriosam sunt doloribus quia impedit
+              laborum velit</p>
+          </div>
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
+          <div class="member-img">
+            <img src="assets/img/team/team-6.jpg" class="img-fluid" alt="">
+            <div class="social">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info text-center">
+            <h4>Josepha Palas</h4>
+            <span>Operation</span>
+            <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit eligendi
+              cupiditate vel</p>
+          </div>
+        </div><!-- End Team Member -->
+
+      </div>
+
+    </div>
+
+  </section><!-- End Team Section -->
+
+  <!-- Call-to-action Section - Home Page -->
+  <section id="call-to-action" class="call-to-action">
+
+    <img src="assets/img/cta-bg.jpg" alt="">
+
+    <div class="container">
+      <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-xl-10">
+          <div class="text-center">
+            <h3>Call To Action</h3>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+              laborum.</p>
+            <a class="cta-btn" href="#">Call To Action</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<app-contactus id="contact"></app-contactus>
+  </section><!-- End Call-to-action Section -->
+
+
+
+</main>
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <div class="col-lg-5 col-md-12 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span>Mr Shaco</span>
+        </a>
+        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta
+          donna mare fermentum iaculis eu non diam phasellus.</p>
+        <div class="social-links d-flex mt-4">
+          <a href=""><i class="bi bi-twitter"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#services">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#">Accounts</a></li>
+          <li><a href="#">Items</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+        <h4>Contact Us</h4>
+        <p>A108 Adam Street</p>
+        <p>New York, NY 535022</p>
+        <p>United States</p>
+        <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+        <p><strong>Email:</strong> <span>info@example.com</span></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>&copy; <span>Copyright</span> <strong class="px-1">Mr Shaco</strong> <span>All Rights Reserved</span></p>
+  </div>
+
+</footer><!-- End Footer -->
+
+<!-- Scroll Top Button -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>

@@ -21,6 +21,15 @@ import { ActionsComponent } from './Components/actions/actions.component';
 import { PermissionsComponent } from './Components/permissions/permissions.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { LoaderComponent } from './Components/loader/loader.component';
+import { AccountsComponent } from './Components/accounts/accounts.component';
+import { AddAccountComponent } from './Components/add-account/add-account.component';
+import { ItemsComponent } from './Components/items/items.component';
+import { AddItemComponent } from './Components/add-item/add-item.component';
+import { AddCategoryComponent } from './Components/add-category/add-category.component';
+import { AddServerComponent } from './Components/add-server/add-server.component';
+import { AddRankComponent } from './Components/add-rank/add-rank.component';
+import { UserNavComponent } from './Components/user-nav/user-nav.component';
+import { ProductCardComponent } from './Components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +49,16 @@ import { LoaderComponent } from './Components/loader/loader.component';
     ActionsComponent,
     PermissionsComponent,
     ProfileComponent,
-    LoaderComponent
+    LoaderComponent,
+    AccountsComponent,
+    AddAccountComponent,
+    ItemsComponent,
+    AddItemComponent,
+    AddCategoryComponent,
+    AddServerComponent,
+    AddRankComponent,
+    UserNavComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,

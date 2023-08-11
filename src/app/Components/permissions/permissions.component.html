@@ -21,7 +21,7 @@
           <tr>
             <th scope="col" class="dark-item text-light">#</th>
             <th scope="col" class="dark-item text-light">Name</th>
-            <th scope="col" class="dark-item text-light">Email</th>
+
             <th class="text-center dark-item text-light" scope="col">Add_Item</th>
             <th class="text-center dark-item text-light" scope="col">Edit_Item</th>
             <th class="text-center dark-item text-light" scope="col">Delete_Item</th>
@@ -33,9 +33,9 @@
         </thead>
         <tbody>
           <tr *ngFor="let admin of admins; let i = index">
-            <th class="dark-item text-light" scope="row">#{{i+1}}</th>
+            <td class="dark-item text-light" scope="row">{{i+1}}</td>
             <td class="dark-item text-light">{{admin?.firstName + ' ' + admin?.lastName}}</td>
-            <td class="dark-item text-light">{{admin?.email}}</td>
+
             <td class="text-center dark-item text-light"><input (change)="permission($event,admin?.email)" class="form-check-input fs-6" type="checkbox" [checked]="permissions[i]?.Add_Item" value="Add_Item"></td>
             <td class="text-center dark-item text-light"><input (change)="permission($event,admin?.email)" class="form-check-input fs-6" type="checkbox" [checked]="permissions[i]?.Edit_Item" value="Edit_Item"></td>
             <td class="text-center dark-item text-light"><input (change)="permission($event,admin?.email)" class="form-check-input fs-6" type="checkbox" [checked]="permissions[i]?.Delete_Item" value="Delete_Item"></td>

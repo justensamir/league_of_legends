@@ -12,6 +12,9 @@ body {
   color: #444444;
 }
 
+.section{
+  background-color: var(--dark-main);
+}
 a {
   color: #4154f1;
   text-decoration: none;
@@ -36,8 +39,10 @@ h6 {
 --------------------------------------------------------------*/
 #main {
   margin-top: 60px;
+  min-height: 100vh;
   padding: 20px 30px;
   transition: all 0.3s;
+  border-top-left-radius: 15px;
 }
 
 @media (max-width: 1199px) {

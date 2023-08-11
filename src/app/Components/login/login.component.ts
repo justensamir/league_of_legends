@@ -5,7 +5,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { DecodeToken } from 'src/app/Modules/model';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { SharedService } from '../SharedService/shared.service';
+import { SharedService } from '../Services/shared.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({

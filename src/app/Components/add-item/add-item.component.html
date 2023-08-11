@@ -1,0 +1,95 @@
+<div class="card dark-item">
+  <div class="card-body">
+    <h5 class="card-title text-light">items <span>| {{itemId == 0? "Add" : "Edit"}}</span></h5>
+
+    <!-- No Labels Form -->
+    <form (ngSubmit)="manageItem()" [formGroup]="item" class="row g-3">
+      <div class="col-md-12" style="display: none;">
+        <input type="number" formControlName="id" class="form-control" min="0" value="0">
+      </div>
+      <div class="col-md-6">
+        <input type="text" formControlName="name" class="form-control" placeholder="Name">
+        <ng-container *ngIf="itemName.touched">
+          <div *ngIf="itemName.hasError('required')" class="text-danger text-start ps-2">
+            required
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md-6">
+        <input type="number" formControlName="price" min="0"  class="form-control" placeholder="item Price">
+        <ng-container *ngIf="itemPrice.touched">
+          <div *ngIf="itemPrice.hasError('required')" class="text-danger text-start ps-2">
+            required
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <select formControlName="game_Id" class="form-select">
+          <option value="" class="text-center" selected>-- Select Game --</option>
+          <option *ngFor="let game of games" [value]="game.id">{{game.name}}</option>
+        </select>
+        <ng-container *ngIf="itemGame.touched">
+          <div *ngIf="itemGame.hasError('required')" class="text-danger text-start ps-2">
+            required
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <select formControlName="server_Id" class="form-select">
+          <option value="" class="text-center" selected>-- Select Server --</option>
+          <option *ngFor="let server of servers" [value]="server.id">{{server.name}}</option>
+        </select>
+        <ng-container *ngIf="itemServer.touched">
+          <div *ngIf="itemServer.hasError('required')" class="text-danger text-start ps-2">
+            required
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <select formControlName="category_Id" class="form-select">
+          <option value="" class="text-center" selected>-- Select Category --</option>
+          <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+        <ng-container *ngIf="itemCategory.touched">
+          <div *ngIf="itemCategory.hasError('required')" class="text-danger text-start ps-2">
+            required
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <select formControlName="rank_Id" class="form-select">
+          <option value="" class="text-center" selected>-- Select Rank --</option>
+          <option *ngFor="let rank of ranks" [value]="rank.id">{{rank.name}}</option>
+        </select>
+        <ng-container *ngIf="itemRank.touched">
+          <div *ngIf="itemRank.hasError('required')" class="text-danger text-start ps-2">
+            required
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md-12">
+        <input type="url" formControlName="imgUrl" class="form-control" placeholder="Image Url">
+        <ng-container *ngIf="itemImageUrl.touched">
+          <div *ngIf="itemImageUrl.hasError('required')" class="text-danger text-start ps-2">
+            required
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md-12">
+        <textarea rows="4" formControlName="description"  class="form-control" placeholder="Description"></textarea>
+        <ng-container *ngIf="itemDescription.touched">
+          <div *ngIf="itemDescription.hasError('required')" class="text-danger text-start ps-2">
+            required
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="text-end">
+        <button type="submit" class="bttn px-5">
+          <span *ngIf="IsDisable" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          {{itemId == 0? "Add" : "Edit"}} item</button>
+      </div>
+    </form><!-- End No Labels Form -->
+
+  </div>
+</div>

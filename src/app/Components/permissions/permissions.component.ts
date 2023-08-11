@@ -108,7 +108,7 @@ export class PermissionsComponent implements OnInit {
         if (err.status == 200) {
           console.log('Permission Added');
         } else {
-          console.log('Permission didnot added');
+          console.log('Permission did not added');
         }
       },
     });

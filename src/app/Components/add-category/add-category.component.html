@@ -1,0 +1,26 @@
+<div class="card dark-item">
+  <div class="card-body">
+    <h5 class="card-title text-light">{{IsAccountCategory? "Accounts" : "Items"}} <span>| Add Category</span></h5>
+    
+
+    <!-- No Labels Form -->
+    <form (ngSubmit)="addCategory()" [formGroup]="category" class="row g-3">
+
+      <div class="col-md-12">
+        <input type="url" formControlName="name" class="form-control" placeholder="Category name">
+        <ng-container *ngIf="categoryName.touched">
+          <div *ngIf="categoryName.hasError('required')" class="text-danger text-start ps-2">
+            required
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="text-end">
+        <button type="submit" class="bttn px-5">
+          <span *ngIf="IsDisable" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+           Add Category</button>
+      </div>
+    </form><!-- End No Labels Form -->
+
+  </div>
+</div>

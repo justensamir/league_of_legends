@@ -1,43 +1,165 @@
-
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar dark-item">
 
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link dark-item text-light" (click)="setAdmins()">
+      <a class="nav-link dark-item text-light">
         <i class="bi bi-grid text-light"></i>
         <span>Dashboard</span>
       </a>
     </li><!-- End Dashboard Nav -->
 
-    <li class="nav-item">
-      <a class="nav-link collapsed dark-item text-light" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-layout-text-window-reverse text-light"></i><span>Admins</span><i class="bi bi-chevron-down ms-auto text-light"></i>
-      </a>
-      <ul id="components-nav" class="nav-content collapse text-light" data-bs-parent="#sidebar-nav">
-        <li>
-          <a class="text-light" (click)="setAddAdmin()">
-            <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Add</span>
-          </a>
-        </li>
-      </ul>
-    </li>
+    <ng-container *ngIf="shared.user.role == 'Owner'">
+      <li class="nav-item">
+        <a class="nav-link collapsed dark-item text-light" data-bs-target="#admins-nav" data-bs-toggle="collapse"
+          href="#">
+          <i class="bi bi-layout-text-window-reverse text-light"></i><span>Admins</span><i
+            class="bi bi-chevron-down ms-auto text-light"></i>
+        </a>
+        <ul id="admins-nav" class="nav-content collapse text-light" data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="text-light" (click)="setAdmins()">
+              <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Show All Admins</span>
+            </a>
+          </li>
+          <li>
+            <a class="text-light" (click)="setAddAdmin()">
+              <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Add</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="shared.user.role == 'Admin'">
+      <li class="nav-item">
+        <a class="nav-link collapsed dark-item text-light" data-bs-target="#accounts-nav" data-bs-toggle="collapse"
+          href="#">
+          <i class="bi bi-layout-text-window-reverse text-light"></i><span>Accounts</span><i
+            class="bi bi-chevron-down ms-auto text-light"></i>
+        </a>
+        <ul id="accounts-nav" class="nav-content collapse text-light" data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="text-light" (click)="setAccounts()">
+              <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Show All Accounts</span>
+            </a>
+          </li>
+          <ng-container *ngIf="shared.userPermissions.Add_Account">
+            <li>
+              <a class="text-light" (click)="setAddAccount()">
+                <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Add</span>
+              </a>
+            </li>
+          </ng-container>
+          <li>
+            <a class="text-light" (click)="setAddAccountCategory()">
+              <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Add Category</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ng-container>
 
-    <li class="nav-item">
-      <a class="nav-link collapsed dark-item text-light" (click)="setPermissions()">
-        <i class="bi bi-layers text-light"></i>
-        <span>Permissions</span>
-      </a>
-    </li>
+    <ng-container *ngIf="shared.user.role == 'Admin'">
 
-    <li class="nav-item">
-      <a class="nav-link collapsed dark-item text-light" (click)="setActions()">
-        <i class="bi bi-boxes text-light"></i>
-        <span>Actions</span>
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed dark-item text-light" data-bs-target="#items-nav" data-bs-toggle="collapse"
+          href="#">
+          <i class="bi bi-layout-text-window-reverse text-light"></i><span>Items</span><i
+            class="bi bi-chevron-down ms-auto text-light"></i>
+        </a>
+        <ul id="items-nav" class="nav-content collapse text-light" data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="text-light" (click)="setItems()">
+              <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Show All Items</span>
+            </a>
+          </li>
 
+          <ng-container *ngIf="shared.userPermissions.Add_Account">
+            <li>
+              <a class="text-light" (click)="setAddItem()">
+                <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Add</span>
+              </a>
+            </li>
+          </ng-container>
+          <li>
+            <a class="text-light" (click)="setAddItemCategory()">
+              <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Add Category</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ng-container>
+
+    <ng-container *ngIf="shared.user.role == 'Admin'">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed dark-item text-light" data-bs-target="#server-nav" data-bs-toggle="collapse"
+          href="#">
+          <i class="bi bi-layout-text-window-reverse text-light"></i><span>Servers</span><i
+            class="bi bi-chevron-down ms-auto text-light"></i>
+        </a>
+        <ul id="server-nav" class="nav-content collapse text-light" data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="text-light" (click)="setAddServer()">
+              <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Add</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ng-container>
+
+    <ng-container *ngIf="shared.user.role == 'Admin'">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed dark-item text-light" data-bs-target="#rank-nav" data-bs-toggle="collapse"
+          href="#">
+          <i class="bi bi-layout-text-window-reverse text-light"></i><span>Ranks</span><i
+            class="bi bi-chevron-down ms-auto text-light"></i>
+        </a>
+        <ul id="rank-nav" class="nav-content collapse text-light" data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="text-light" (click)="setAddRank()">
+              <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Add</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="shared.user.role == 'Admin'">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed dark-item text-light" data-bs-target="#order-nav" data-bs-toggle="collapse"
+          href="#">
+          <i class="bi bi-layout-text-window-reverse text-light"></i><span>Orders</span><i
+            class="bi bi-chevron-down ms-auto text-light"></i>
+        </a>
+        <ul id="order-nav" class="nav-content collapse text-light" data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="text-light" (click)="setAddRank()">
+              <i class="bi bi-person-plus-fill text-light fs-6"></i><span>Add</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ng-container>
+
+    <ng-container *ngIf="shared.user.role == 'Owner'">
+      <li class="nav-item">
+        <a class="nav-link collapsed dark-item text-light" (click)="setPermissions()">
+          <i class="bi bi-layers text-light"></i>
+          <span>Permissions</span>
+        </a>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="shared.user.role == 'Owner'">
+      <li class="nav-item">
+        <a class="nav-link collapsed dark-item text-light" (click)="setActions()">
+          <i class="bi bi-boxes text-light"></i>
+          <span>Actions</span>
+        </a>
+      </li>
+    </ng-container>
 
     <li class="nav-item">
       <a class="nav-link collapsed dark-item text-light" (click)="setProfile()">
@@ -50,7 +172,7 @@
 
 </aside><!-- End Sidebar-->
 
-<main id="main" class="main dark-main h-100">
+<main id="main" class="main dark-main">
 
   <div class="pagetitle">
     <h1 class="text-light">Dashboard</h1>
@@ -61,19 +183,49 @@
           <li class="breadcrumb-item active">Admins</li>
         </ng-container>
         <ng-container *ngIf="dashboard.addAdmin">
-          <li class="breadcrumb-item active">Admins</li>
+          <li class="breadcrumb-item">Admins</li>
           <li class="breadcrumb-item active">Add</li>
         </ng-container>
         <ng-container *ngIf="dashboard.actions">
-          <li class="breadcrumb-item active">Admins</li>
+          <li class="breadcrumb-item">Admins</li>
           <li class="breadcrumb-item active">Actions</li>
         </ng-container>
         <ng-container *ngIf="dashboard.permissions">
-          <li class="breadcrumb-item active">Admins</li>
+          <li class="breadcrumb-item">Admins</li>
           <li class="breadcrumb-item active">Permissions</li>
         </ng-container>
         <ng-container *ngIf="dashboard.profile">
           <li class="breadcrumb-item active">Profile</li>
+        </ng-container>
+        <ng-container *ngIf="dashboard.accounts">
+          <li class="breadcrumb-item active">Accounts</li>
+        </ng-container>
+        <ng-container *ngIf="dashboard.addAccount">
+          <li class="breadcrumb-item">Accounts</li>
+          <li class="breadcrumb-item active">Add</li>
+        </ng-container>
+        <ng-container *ngIf="dashboard.addAccountCategory">
+          <li class="breadcrumb-item">Accounts</li>
+          <li class="breadcrumb-item active">Add Category</li>
+        </ng-container>
+        <ng-container *ngIf="dashboard.Items">
+          <li class="breadcrumb-item active">Items</li>
+        </ng-container>
+        <ng-container *ngIf="dashboard.addItem">
+          <li class="breadcrumb-item">Items</li>
+          <li class="breadcrumb-item active">Add</li>
+        </ng-container>
+        <ng-container *ngIf="dashboard.addItemCategory">
+          <li class="breadcrumb-item">Items</li>
+          <li class="breadcrumb-item active">Add Category</li>
+        </ng-container>
+        <ng-container *ngIf="dashboard.addServer">
+          <li class="breadcrumb-item">Servers</li>
+          <li class="breadcrumb-item active">Add</li>
+        </ng-container>
+        <ng-container *ngIf="dashboard.addRank">
+          <li class="breadcrumb-item">Ranks</li>
+          <li class="breadcrumb-item active">Add</li>
         </ng-container>
       </ol>
     </nav>
@@ -81,11 +233,20 @@
 
   <section class="section dashboard">
     <div class="row">
-          <app-admins *ngIf="dashboard.admins"></app-admins>
-          <app-actions *ngIf="dashboard.actions"></app-actions>
-          <app-add-admin *ngIf="dashboard.addAdmin"></app-add-admin>
-          <app-permissions *ngIf="dashboard.permissions"></app-permissions>
-          <app-profile *ngIf="dashboard.profile"></app-profile>
+      <!-- <router-outlet name="admin"></router-outlet> -->
+      <app-admins *ngIf="dashboard.admins"></app-admins>
+      <app-actions *ngIf="dashboard.actions"></app-actions>
+      <app-add-admin *ngIf="dashboard.addAdmin"></app-add-admin>
+      <app-permissions *ngIf="dashboard.permissions"></app-permissions>
+      <app-profile *ngIf="dashboard.profile"></app-profile>
+      <app-accounts *ngIf="dashboard.accounts"></app-accounts>
+      <app-add-account [accountId]="0" *ngIf="dashboard.addAccount"></app-add-account>
+      <app-items *ngIf="dashboard.Items"></app-items>
+      <app-add-item [itemId]="0" *ngIf="dashboard.addItem"></app-add-item>
+      <app-add-category [IsAccountCategory]="false" *ngIf="dashboard.addItemCategory"></app-add-category>
+      <app-add-category [IsAccountCategory]="true" *ngIf="dashboard.addAccountCategory"></app-add-category>
+      <app-add-server *ngIf="dashboard.addServer"></app-add-server>
+      <app-add-rank *ngIf="dashboard.addRank"></app-add-rank>
     </div>
   </section>
 
